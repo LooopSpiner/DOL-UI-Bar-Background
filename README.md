@@ -5,4 +5,4 @@
 
 重启游戏后会去掉，我也不知道咋修
 
-灵感来源于decorations mod
+灵感来源于decorations mod，在侧边栏-选项-模组设置中更换背景
