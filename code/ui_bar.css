@@ -18,3 +18,12 @@
     background-color: rgba(51, 51, 51, 0.3);
     text-shadow: 0 0 0.2em #0000009f;
 }
+
+#storyCaptionContent .meter {
+    position: relative;
+  height: 0.25em;
+  width: 100%;
+  background-color: var(--600);
+  text-align: center;
+  z-index: 100;
+}
