@@ -1,0 +1,61 @@
+:: UI Bar [widget]
+
+<<widget "background_settings">>
+<span class="gold">侧边栏背景</span>
+
+<details>
+  <summary>展开设置页面</summary>
+  <div id="radioButtons">
+    <label><input type="radio" name="numbers" value="unset"> 取消设定</label>
+    <label><input type="radio" name="numbers" value="1"> 1</label>
+    <label><input type="radio" name="numbers" value="2"> 2</label>
+    <label><input type="radio" name="numbers" value="3"> 3</label>
+    <label><input type="radio" name="numbers" value="4"> 4</label>
+    <label><input type="radio" name="numbers" value="5"> 5</label>
+    <label><input type="radio" name="numbers" value="6"> 6</label>
+    <label><input type="radio" name="numbers" value="7"> 7</label>
+    <label><input type="radio" name="numbers" value="8"> 8</label>
+    <label><input type="radio" name="numbers" value="9"> 9</label>
+    <label><input type="radio" name="numbers" value="10"> 10</label>
+  </div>
+
+  <<if $ui_bar_select && $ui_bar_select !== "unset">>
+    <span class="green">你已选择$ui_bar_select号背景</span>
+  <<else>>
+    <span class="blue">你还没有选择任何背景</span>
+  <</if>><br>
+
+  <button onclick="applySelection()" class="link-internal macro-button">确认选择</button>
+  <<link [[刷新页面|$passage]]>><</link>>
+
+  <script>
+    function getSelectedValue() {
+      const radios = document.getElementsByName('numbers');
+      for (let radio of radios) {
+        if (radio.checked) {
+          return radio.value;
+        }
+      }
+      return null;
+    }
+
+    function applySelection() {
+      const ui_bar = document.getElementById("ui-bar-body");
+      const selectedValue = getSelectedValue();
+      V.ui_bar_select = selectedValue;
+
+      if (selectedValue == "unset") {
+        ui_bar.style.backgroundImage = "none";
+        
+      } else if (selectedValue) {
+        
+        window.modSC2DataManager.getHtmlTagSrcHook().requestImageBySrc("img/misc/ui_bar/" + V.ui_bar_select + ".png")
+          .then(base64Img => {
+            ui_bar.style.backgroundImage = "url('" + base64Img + "')";
+          });
+      }
+    }
+  </script>
+</details>
+
+<</widget>>

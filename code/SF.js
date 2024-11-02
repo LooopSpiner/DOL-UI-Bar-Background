@@ -1,0 +1,1 @@
+simpleFrameworks.addto('iModOptions', 'background_settings');

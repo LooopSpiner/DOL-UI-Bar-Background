@@ -1,0 +1,41 @@
+{
+    "name": "UI_bar_background",
+    "version": "1.0.0",
+    "styleFileList": [
+        "code/ui_bar.css"
+    ],
+    "scriptFileList": [
+        "code/SF.js"
+    ],
+    "tweeFileList": [
+        "code/background_settings.twee"
+    ],
+    "imgFileList": [
+        "img/misc/ui_bar/1.png",
+        "img/misc/ui_bar/2.png",
+        "img/misc/ui_bar/3.png",
+        "img/misc/ui_bar/4.png",
+        "img/misc/ui_bar/5.png",
+        "img/misc/ui_bar/6.png",
+        "img/misc/ui_bar/7.png",
+        "img/misc/ui_bar/8.png",
+        "img/misc/ui_bar/9.png",
+        "img/misc/ui_bar/10.png"
+    ],
+    "additionFile": [
+    ],
+    "addonPlugin": [
+    {
+      "modName": "ModLoader DoL ImageLoaderHook",
+      "addonName": "ImageLoaderAddon",
+      "modVersion": "^2.3.0",
+      "params": []
+    }
+  ],
+  "dependenceInfo": [
+    {
+      "modName": "ModLoader DoL ImageLoaderHook",
+      "version": "^2.3.0"
+    }
+  ]
+  }
